@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { useQuery } from 'react-query'
-// import debounce from 'lodash.debounce'
 import { fetchExchangeRates } from '../api';
 import type { CurrencyData } from '../api';
 
@@ -14,28 +13,24 @@ const ExchangeRateConversion = () => {
     const currencies = useMemo(() => data.map(({ currencyCode }) => currencyCode), [data]);
 
     useEffect(() => {
-        console.log(`useEffect`, currency, amount)
-        if (currency) {
+        if (currency && amount) {
             setConversion(((amount / currency.rate) * currency.amount).toFixed(3))
         }
 
     }, [currency, amount])
 
     const handleCurrencyChange = (event: ChangeEvent<HTMLSelectElement>) =>
-        setCurrency(data.find(({ currencyCode }) => currencyCode === event.target?.value))
+        setCurrency(data.find(({ currencyCode }) => currencyCode === event.target.value))
 
-    const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => setAmount(event.target.valueAsNumber)
-
-    // const handleAmountChange = debounce((event: ChangeEvent<HTMLInputElement>) => {
-    //     const value = event.target?.valueAsNumber;
-    //     setAmount(value > 0 ? value : 0);
-    // }, 500)
+    const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.valueAsNumber;
+        setAmount(value >= 0 ? value : 0)
+    }
 
     return <div>
         Calculation
         <div>
             <input type="number" value={amount} onChange={handleAmountChange} /> CZK
-            {/* <input type="number" name="amount" onChange={handleAmountChange} value={amount}/> CZK */}
             <span>= {conversion}</span>
             <select onChange={handleCurrencyChange} value={currency?.currencyCode}>
                 <option value="-"></option>

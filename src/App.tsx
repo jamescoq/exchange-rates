@@ -19,9 +19,15 @@ const Container = styled.div`
   margin: 5vh;
 `;
 
+const Heading = styled.h2`
+  font-size: 3em;
+  line-height: $h2-line-height-mobile;
+`
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <Container>
+      <Heading>Kurzovní lístek</Heading>
       <ExchangeRateConversion />
       <ExchangeRatesTable />
     </Container>
