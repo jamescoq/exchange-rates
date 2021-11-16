@@ -1,13 +1,9 @@
-import React from 'react';
-import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
-import styled, { createGlobalStyle } from 'styled-components'
+import { QueryClient, QueryClientProvider } from 'react-query';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import { ExchangeRateConversion, ExchangeRatesTable } from './components';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 const GlobalStyle = createGlobalStyle`
   html: {
@@ -20,30 +16,30 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
   }
-`
+`;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-  height: 100%;
-  margin: 5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	margin: 5vh;
 `;
 
 const Heading = styled.h2`
-  font-size: 3em;
-  line-height: $h2-line-height-mobile;
-`
+	font-size: 3em;
+	line-height: $h2-line-height-mobile;
+`;
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <GlobalStyle />
-    <Container>
-      <Heading>Kurzovní lístek</Heading>
-      <ExchangeRateConversion />
-      <ExchangeRatesTable />
-    </Container>
-  </QueryClientProvider>
+	<QueryClientProvider client={queryClient}>
+		<GlobalStyle />
+		<Container>
+			<Heading>Kurzovní lístek</Heading>
+			<ExchangeRateConversion />
+			<ExchangeRatesTable />
+		</Container>
+	</QueryClientProvider>
 );
 
 export default App;

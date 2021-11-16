@@ -34,43 +34,43 @@ import { default as XDR } from './xd.svg';
 import { default as ZAR } from './za.svg';
 
 type Icons = {
-    [key: string]: string
-}
+	[key: string]: string;
+};
 const icons: Icons = {
-    AUD
-    , BGN
-    , BRL
-    , CAD
-    , CNY
-    , CZK
-    , DKK
-    , EUR
-    , GBP
-    , HKD
-    , HRK
-    , HUF
-    , CHF
-    , INR
-    , ILS
-    , IDR
-    , ISK
-    , JPY
-    , KRW
-    , MXN
-    , MYR
-    , NOK
-    , NZD
-    , PHP
-    , PLN
-    , RON
-    , RUB
-    , SEK
-    , SGD
-    , THB
-    , TRY
-    , USD
-    , XDR
-    , ZAR
-}
+	AUD,
+	BGN,
+	BRL,
+	CAD,
+	CNY,
+	CZK,
+	DKK,
+	EUR,
+	GBP,
+	HKD,
+	HRK,
+	HUF,
+	CHF,
+	INR,
+	ILS,
+	IDR,
+	ISK,
+	JPY,
+	KRW,
+	MXN,
+	MYR,
+	NOK,
+	NZD,
+	PHP,
+	PLN,
+	RON,
+	RUB,
+	SEK,
+	SGD,
+	THB,
+	TRY,
+	USD,
+	XDR,
+	ZAR,
+};
 
 export default icons;
