@@ -3,13 +3,25 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import styled, { createGlobalStyle } from 'styled-components'
 
-import styled from 'styled-components'
 import ExchangeRateConversion from './components/ExchangeRateConversion';
 import ExchangeRatesTable from './components/ExchangeRatesTable';
 
 const queryClient = new QueryClient()
+
+const GlobalStyle = createGlobalStyle`
+  html: {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen","Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+  }
+`
 
 const Container = styled.div`
   display: flex;
@@ -26,12 +38,12 @@ const Heading = styled.h2`
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <GlobalStyle />
     <Container>
       <Heading>Kurzovní lístek</Heading>
       <ExchangeRateConversion />
       <ExchangeRatesTable />
     </Container>
-    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );
 

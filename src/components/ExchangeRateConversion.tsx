@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
+import Select, { components } from "react-select";
 
 import icons from '../assets/flags/icons';
 import RightArrow from '../assets/right-arrow.svg';
 import type { CurrencyData } from '../api';
-import Select, { components } from "react-select";
 import useExchangeRates from '../useExchangeRates';
 import Icon from './Icon';
 import Row from './Row';
@@ -98,7 +98,7 @@ const ExchangeRateConversion = () => {
     const options = useMemo(() => data.map(({ country, currencyCode, }) => ({ value: currencyCode, label: country, icon: icons[currencyCode] })), [data]);
 
     useEffect(() => {
-        if (currency && amount) {
+        if (currency) {
             setConversion(((Number(amount) / currency.rate) * currency.amount).toFixed(3))
         }
 
