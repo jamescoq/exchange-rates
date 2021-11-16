@@ -1,7 +1,7 @@
 
 import Papa from 'papaparse'
 
-export interface CurrencyData {
+export type CurrencyData = {
     country: string;
     currency: string;
     amount: number;

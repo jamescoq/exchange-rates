@@ -3,6 +3,7 @@ import { default as BGN } from './bg.svg';
 import { default as BRL } from './br.svg';
 import { default as CAD } from './ca.svg';
 import { default as CNY } from './cn.svg';
+import { default as CZK } from './cz.svg';
 import { default as DKK } from './dk.svg';
 import { default as EUR } from './eu.svg';
 import { default as GBP } from './gb.svg';
@@ -41,6 +42,7 @@ const icons: Icons = {
     , BRL
     , CAD
     , CNY
+    , CZK
     , DKK
     , EUR
     , GBP
