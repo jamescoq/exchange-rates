@@ -6,6 +6,7 @@ import icons from '../assets/flags/icons';
 import RightArrow from '../assets/right-arrow.svg';
 import type { CurrencyData } from '../api';
 import useExchangeRates from '../useExchangeRates';
+
 import Icon from './Icon';
 import Row from './Row';
 import Wrapper from './Wrapper';

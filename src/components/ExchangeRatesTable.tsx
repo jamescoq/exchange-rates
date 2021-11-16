@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import icons from '../assets/flags/icons';
 import { ReactComponent as Loading } from '../assets/loading.svg';
 import useExchangeRates from '../useExchangeRates';
+
 import Icon from './Icon';
 import Row from './Row';
 import Wrapper from './Wrapper';
 
-const Separator = styled.hr<{ size: number }>`
+const Separator = styled.hr<{ size?: number }>`
     border-top: ${({ size = 1 }) => size}px solid;
 `
 
@@ -37,7 +38,7 @@ const ExchangeRatesTable = () => {
                     <Item>{`${amount} ${currencyCode}`}</Item>
                     <Item>{`${rate} Kč`}</Item>
                 </Row>
-                {index < data.length - 1 && <Separator size={1} />}
+                {index < data.length - 1 && <Separator />}
             </Fragment>
         )}
     </Wrapper >

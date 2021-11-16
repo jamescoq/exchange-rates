@@ -5,8 +5,7 @@ import {
 } from 'react-query'
 import styled, { createGlobalStyle } from 'styled-components'
 
-import ExchangeRateConversion from './components/ExchangeRateConversion';
-import ExchangeRatesTable from './components/ExchangeRatesTable';
+import { ExchangeRateConversion, ExchangeRatesTable } from './components';
 
 const queryClient = new QueryClient()
 
