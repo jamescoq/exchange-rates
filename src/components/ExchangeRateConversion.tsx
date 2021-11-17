@@ -34,14 +34,14 @@ const Input = styled.input`
     border-style: solid;
     border-width: 1px;
     min-height: 38px;
-	min-width: 135px;
+	min-width: 130px;
     width: 14vw;
     padding: 0px 0px;
-    padding-right: 25px;
+    padding-right: 30px;
     font-size: 16px;
 
 	@media (max-width: 768px) {
-		width: 17vw;
+		width: 44vw;
 	}
 `;
 const CurrencySuffix = styled.span`
@@ -66,7 +66,7 @@ const CurrencySelect = styled<any>(Select)`
 	min-width: 160px;
 
 	@media (max-width: 768px) {
-		width: 20vw;
+		width: 50vw;
 	}
 `;
 
@@ -79,14 +79,14 @@ const Text = styled.span`
 	border-width: 1px;
 	min-height: 38px;
 	min-width: 160px;
-	width: 16vw;
+	width: 15vw;
 	display: flex;
 	align-items: center;
 	justify-content: end;
 	padding-right: 1vw;
 
 	@media (max-width: 768px) {
-		width: 20vw;
+		width: 49vw;
 	}
 `;
 
@@ -99,11 +99,13 @@ const Label = styled.label`
 const ResponsiveRow = styled(Row)`
 	@media (max-width: 768px) {
 		flex-direction: column;
-		justify-content: space-between;
+		height: 230px;
 	}
 `;
 
 const ResponsiveIcon = styled(Icon)`
+	margin-top: 25px;
+
 	@media (max-width: 920px) {
 		display: none;
 	}
@@ -169,7 +171,7 @@ const ExchangeRateConversion = () => {
 						onChange={handleCurrencyChange}
 					/>
 				</FormGroup>
-				<ResponsiveIcon src={RightArrow} width="4vh" height="4vh" />
+				<ResponsiveIcon src={RightArrow} width="30px" height="30px" />
 				<FormGroup>
 					<Label>Přepočet</Label>
 					<Text>{`${conversion ?? ''} ${currency?.currencyCode ?? ''}`}</Text>
